@@ -27,6 +27,8 @@ jobs:
               run: corepack enable
             - run: corepack prepare yarn@3.2.4 --activate
             - run: yarn -v
+            - name: Cache Clean
+              run: yarn cache clean
             - name: Install dependencies
               run: rm -rf node_modules && yarn install
             - run: npm run build
